@@ -1,0 +1,39 @@
+int Joystick_X = 1;
+int Joystick_y = 0;
+int Joystick_Button = 2;
+
+int X_Position = 0;
+int y_Position = 0;
+int Joystick_Button_State = 2;
+int Map_X = 0;
+int Map_Y = 0;
+
+
+void setup() {
+  Serial.begin(9600); 
+  
+  pinMode(Joystick_X, INPUT);
+  pinMode(Joystick_y, INPUT);
+  pinMode(Joystick_Button, INPUT_PULLUP); 
+
+
+}
+
+void loop() {
+  X_Position = analogRead(Joystick_X);
+  y_Position = analogRead(Joystick_y);
+  Joystick_Button_State = digitalRead(Joystick_Button);
+  Map_X = map(X_Position, 0, 1023, -512, 512);
+  Map_Y = map(y_Position, 0, 1023, -512, 512);
+  
+  Serial.print("X: ");
+  Serial.print(Map_X);
+  Serial.print(" | Y: ");
+  Serial.print(Map_Y);
+  Serial.print(" | Button: ");
+  Serial.println(Joystick_Button_State);
+
+  delay(100);
+  
+
+}
