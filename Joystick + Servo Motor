@@ -1,7 +1,10 @@
+#include <Servo.h> // include servo library
 // This code reads the joysticks Y axis movemeent and translates it for the servo mtor to read. 
 
 int joystick_y = 0; // give variable to joystick readings along y axis
 int joystick_value; // create variable for joystick value
+
+Servo servo_bro;
 
 void setup()
 {
@@ -12,7 +15,7 @@ void loop()
 {
 joystick_value = analogRead(joystick_y); // read y axis value from joystick
 joystick_value = map(joystick_value, 0, 1023, 0, 180); // Change value range to 0-180 because thats the servo's range of movement 
-servo1.write(joystick_value); // write value to servo
+servo_bro.write(joystick_value); // write value to servo
 delay(20); // add small delay to reduce noise
 }
 
