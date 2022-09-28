@@ -1,0 +1,18 @@
+int dc_motor = 5;
+int button_throttle = 4;
+
+void setup(){
+pinMode(dc_motor,OUTPUT);
+pinMode(button_throttle,INPUT);
+}
+
+void loop(){
+if(digitalRead(button_throttle)==HIGH){
+digitalWrite(dc_motor,HIGH);
+}
+else{
+digitalWrite(dc_motor,LOW);
+}
+}
+
+//ezy-pezy
