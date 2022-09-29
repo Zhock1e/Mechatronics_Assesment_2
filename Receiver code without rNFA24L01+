@@ -1,0 +1,24 @@
+#include <Servo.h> // include servo library
+
+int dc_motor = 5;
+Servo servo_bro;
+
+void setup()
+{
+  pinMode(dc_motor,OUTPUT);
+  servo_bro.attach(3); // start servo // hehe 
+}
+
+void loop()
+{
+  if(digitalRead(button_throttle)==HIGH){
+//digitalWrite(dc_motor,HIGH);
+  //else digitalWrite(dc_motor,LOW);
+}
+//joystick_value = analogRead(joystick_y); // read y axis value from joystick
+//joystick_value = map(joystick_value, 0, 1023, 0, 180); // Change value range to 0-180 because thats the servo's range of movement 
+servo_bro.write(joystick_value); // write value to servo
+delay(20); // add small delay to reduce noise
+}
+
+// hhhhhhhhhhhhhhhhhhhhh
