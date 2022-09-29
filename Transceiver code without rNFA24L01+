@@ -1,4 +1,4 @@
-#include <Servo.h> // include servo library
+
 // This code reads the joysticks Y axis movemeent and translates it for the servo mtor to read. 
 
 int joystick_y = 0; // give variable to joystick readings along y axis
